@@ -1,23 +1,21 @@
-#pragma once
+
 #include <vector>
 #include <stdexcept>
-#include "FootSoldier.hpp"
+#include "Paramedic.hpp"
 using namespace std;
 using namespace WarGame;
 
-class FootCommander  : public FootSoldier{
+class ParamedicCommander  : public Paramedic{
     public: 
-FootCommander(){}
-~FootCommander(){}
-
-FootCommander(int t){
- const int health=150;  
- damage=20;
- life=150;
+ParamedicCommander() {}
+~ParamedicCommander() {}
+ParamedicCommander(int t) {
+ const int health=200;  
+ life=200;
  team =t;
 }
+
 void fullAttack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction)override ;
 void attack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction) ;
-pair<int,int> CloserSoldier(std::vector<std::vector<Soldier*>>& board,pair <int,int> loction)  ;
 };
 

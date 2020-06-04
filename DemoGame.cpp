@@ -1,3 +1,4 @@
+//#pragma once
 #include "DemoGame.hpp"
 #include "FootSoldier.hpp"
 #include "FootCommander.hpp"

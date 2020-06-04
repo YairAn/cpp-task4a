@@ -1,27 +1,27 @@
 #pragma once
-
 #include <vector>
 #include <stdexcept>
 #include "Soldier.hpp"
-
 using namespace std;
-//using namespace WarGame;
-namespace WarGame {
 
-class Sniper  : public Soldier{
+using namespace WarGame;
+class Paramedic : public Soldier{
     public: 
-Sniper(){}
-~Sniper(){}
-
-Sniper(int t) {
+   Paramedic(){}
+      ~Paramedic(){
+   }
+Paramedic(int t) {
  const int health=100;  
- damage=50;
+ //damage=0;
  life=100;
  team =t;
 }
 
 void attack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction);
  void fullAttack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction) override;
-pair<int,int> Strongest_Soldier(std::vector<std::vector<Soldier*>>& board,pair <int,int> loction);};
+std::vector <Soldier*> FindFriends(std::vector<std::vector<Soldier*>>& board,pair <int,int> loction);
 
-}
+
+
+};
+

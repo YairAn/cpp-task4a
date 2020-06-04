@@ -1,10 +1,12 @@
+#pragma once
+
 #include <string>
 #include <vector>
 #include <stdexcept>
 #include "Soldier.hpp"
 
 
-namespace WarGame {
+ namespace WarGame{
 
 class Board {
   private:
@@ -12,7 +14,7 @@ class Board {
   public:
     enum MoveDIR { Up, Down, Right, Left };
     
-    Board(uint numRows, uint numCols) : 
+    Board(int numRows, int numCols) : 
       board(numRows, std::vector<Soldier*>(numCols, nullptr)) {}
 
     // operator for putting soldiers on the game-board during initialization.

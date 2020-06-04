@@ -1,3 +1,4 @@
+#pragma once
 
 #include <vector>
 #include <stdexcept>
@@ -12,7 +13,13 @@ class Soldier{
         int team;
 
 Soldier():health(100),life(100),damage(10){}
-//virtual void attack ();
+
+virtual ~Soldier(){
+}
+ void attack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction);
+ virtual void fullAttack (std::vector<std::vector<Soldier*>>& board,pair <int,int> loction){}
+ pair<int,int> CloserSoldier(std::vector<std::vector<Soldier*>>& board,pair <int,int> loction);
+
 };
 
 }
