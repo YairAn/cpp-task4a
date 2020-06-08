@@ -3,6 +3,8 @@
 #include <stdexcept>
 #include<cmath>
 #include "SniperCommander.hpp"
+#include <iostream>
+
 using namespace std;
 using namespace WarGame;
 
@@ -13,7 +15,7 @@ for (int i = 0; i < board.size(); i++)
  for (int j = 0; j < board[0].size(); j++){
 
  if( Sniper* f = dynamic_cast<Sniper*>(board[i][j]) ) {
-     if( board[i][j]->team != board[loction.first][loction.second]->team)    
+     if( board[i][j]->team == board[loction.first][loction.second]->team)    
                {
               f->attack(board,{i,j});
                 }

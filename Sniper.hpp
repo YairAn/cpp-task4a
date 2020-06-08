@@ -18,6 +18,7 @@ Sniper(int t) {
  damage=50;
  life=100;
  team =t;
+ type=Sniper_solider;
 }
 
 void attack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction);

@@ -155,7 +155,7 @@
 	    CHECK(board.has_soldiers(2));
 	    CHECK(board.has_soldiers(1));
 	    board.move(1,{1,0},WarGame::Board::MoveDIR::Down);
-	    CHECK(board.has_soldiers(2));
+		CHECK(board.has_soldiers(2));
 	    CHECK(board.has_soldiers(1));
 
 	    board.move(1,{0,2},WarGame::Board::MoveDIR::Up);
@@ -169,6 +169,8 @@
 	    WarGame::Board board(8,8);
 	    CHECK(!board.has_soldiers(1));
 	    board[{0,0}] = new FootSoldier(1);//player 1 soldier1
+			    cout<<"check"<<endl;
+
 		CHECK(board.has_soldiers(1));
 	    board[{0,1}] = new FootCommander(1);//player 1 soldier2
 		CHECK(board.has_soldiers(1));
@@ -190,9 +192,9 @@
 
 		//consider using for.....
 	    CHECK(board.has_soldiers(2));
-	    board.move(1,{0,0},WarGame::Board::MoveDIR::Up); //player2 soldier1 - 90
+	   board.move(1,{0,0},WarGame::Board::MoveDIR::Up); //player2 soldier1 - 90
 	    CHECK(board.has_soldiers(2));
-	    board.move(1,{0,1},WarGame::Board::MoveDIR::Up);//player2 soldier2 - 130, player 2 soldier1 - 80
+	   board.move(1,{0,1},WarGame::Board::MoveDIR::Up);//player2 soldier2 - 130, player 2 soldier1 - 80
 	    CHECK(board.has_soldiers(2));
 	    board.move(1,{0,2},WarGame::Board::MoveDIR::Up);//player2 soldier6 - 150
 	    CHECK(board.has_soldiers(2));
@@ -202,7 +204,6 @@
 	    CHECK(board.has_soldiers(2));
 	    board.move(1,{0,5},WarGame::Board::MoveDIR::Up); //player1 soldier5 - 100, player 1 soldier4 - 120, player 1 soldier6 - 200
 	    CHECK(board.has_soldiers(2));
-
 
 	    //sniper 1 will kill them all
 	    board.move(1,{1,3},WarGame::Board::MoveDIR::Down); //player2 soldier6 - 100, player 2 soldier2 80

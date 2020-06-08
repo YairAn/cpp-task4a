@@ -18,6 +18,7 @@ FootSoldier(int t) {
  damage=10;
  life=100;
  team =t;
+ type=F_Soldier;
 }
 
 void attack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction);

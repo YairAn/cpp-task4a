@@ -2,6 +2,8 @@
 #include <vector>
 #include <stdexcept>
 #include<cmath>
+#include<iostream>
+
 #define Min_VAL -1
 using namespace std;
 
@@ -52,6 +54,7 @@ if(board[x][y]->health <= 0){
 
   void Sniper::fullAttack (std::vector<std::vector<Soldier*>>& board,pair <int,int> loction)
   {
+
   attack(board,loction);
 }
 

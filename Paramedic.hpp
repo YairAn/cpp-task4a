@@ -15,6 +15,7 @@ Paramedic(int t) {
  //damage=0;
  life=100;
  team =t;
+ type= P_Solidier;
 }
 
 void attack(std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction);

@@ -2,6 +2,8 @@
 #include <vector>
 #include <stdexcept>
 #include<cmath>
+#include<iostream>
+
 #define MAX_VAL 9999999
 using namespace std;
 
@@ -21,7 +23,7 @@ return ans;
 for (int i = 0; i < board.size(); i++)
 {
  for (int j = 0; j <board[0].size(); j++){
-    if(board[i][j] != nullptr && board[loction.first][loction.second]!= nullptr &&
+    if(board[i][j] != nullptr  &&
        board[i][j]->team != board[loction.first][loction.second]->team)   
        {
        
@@ -42,18 +44,22 @@ return target;
 }
 
 void FootSoldier::attack( std::vector<std::vector<Soldier*>>& board ,pair <int,int> loction ){
+
 pair<int,int> target  = CloserSoldier(board , loction) ;
 int x = target.first;
 int y = target.second;
 if (x== -1 && y == -1) return;
 board[x][y]->health -= this->damage; 
 if(board[x][y]->health <= 0){
+ // cout<<"head shoot"<<endl;
    delete board[x][y];
    board[x][y] = nullptr;
   }
+
 }
 
   void FootSoldier::fullAttack (std::vector<std::vector<Soldier*>>& board,pair <int,int> loction)
   {
+
   attack(board,loction);
 }
